@@ -34,15 +34,7 @@ def handle_postback(event):
     postback_data = dict(parse_qsl(event.postback.data))
     # print(postback_data.get('action', ''))
     # print(postback_data.get('item', ''))
-    sticker_list=[(1070, 17839), (6362, 11087920), (11537, 52002734), (8525, 16581293)]
-    if postback_data.get('action')=='索取備品':
-        sticker_random=sticker_list[random.randint(0,len(sticker_list)-1)]
-        messages=[]
-        messages.append(StickerSendMessage(package_id=sticker_random[0], sticker_id=sticker_random[1]))
-        messages.append(TextSendMessage(text=f'{user_name}, 好的沒問題, 櫃台服務人員將盡快幫您準備{postback_data.get("item", "")}'))
-        line_bot_api.reply_message(event.reply_token, messages)
-    elif postback_data.get('action')=='food':
-        show_food(event, json.loads(postback_data.get('item', '')))   
+   
 
 
 @handler.add(MessageEvent)
@@ -76,7 +68,7 @@ def time(event):
     # print(event.postback.data)
     postback_data = dict(parse_qsl(event.postback.data))
     print(postback_data.get('action', ''))
-    # print(postback_data.get('item', ''))
+    print(postback_data.get('item', ''))
     postback_data = dict(parse_qsl(event.postback.data))
     print(postback_data.get('action'))
     if postback_data.get('action')=='sb':
@@ -92,7 +84,21 @@ def time(event):
     elif postback_data.get('action')=='ifood1':
         show_food1(event)
     elif postback_data.get('action')=='ifood2':
-        show_food2(event)   
+        show_food2(event)  
+    elif postback_data.get('action')=='a':
+        a(event) 
+    elif postback_data.get('action')=='b':
+        b(event)
+    elif postback_data.get('action')=='c':
+        c(event) 
+    elif postback_data.get('action')=='d':
+        d(event) 
+    elif postback_data.get('action')=='e':
+        e(event) 
+    elif postback_data.get('action')=='f':
+        f(event) 
+    elif postback_data.get('action')=='g':
+        g(event) 
 
 def stime(event): #宵夜街時間
     confirm_template_message = TemplateSendMessage(
@@ -122,7 +128,7 @@ def btime(event):
             actions=[
                 PostbackAction(
                     label='早午餐',
-                    display_text='我想要吃早午餐!', #宵夜街跟後門的displaytext一樣可以嗎 但是我的data不一樣
+                    display_text='我想要吃早午餐!', 
                     data='action=bb',
                 ),
                 PostbackAction(

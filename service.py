@@ -9,7 +9,7 @@ def call_service(event):
     message = TemplateSendMessage(
         alt_text='Buttons template',
         template=ButtonsTemplate(
-            thumbnail_image_url='https://i.imgur.com/rfgMcFM.jpg',
+            thumbnail_image_url='https://img.onl/3mCuMn',
             title='今天想去哪裡吃?',
             text='請點選想去的地方',
             actions=[
@@ -35,7 +35,7 @@ def incampus(event):
         alt_text='Buttons template',
         template=ButtonsTemplate(
             # thumbnail_image_url=url_for('static', filename='images/brown_1024.jpg', _external=True),
-            thumbnail_image_url='https://i.imgur.com/mfUIthQ.png',
+            thumbnail_image_url='https://www.cdstm.cn/gallery/zhuanti/ptzt/201711/W020171106647026456045.jpg',
             title='今天想去哪間學餐吃?',
             text='請選擇!',
             actions=[
