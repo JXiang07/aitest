@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'NCUfoodbot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3B9A4072A1DE42BF8EE7E4CA25815C38 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_716D861045744149B2C7932FC4F1FB20 }}
